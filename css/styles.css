@@ -47,6 +47,11 @@ body {
   font-size: 16px;
 }
 
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 /* або може бути назва .wrapper */
 .container {
   width: 1152px;
@@ -77,6 +82,7 @@ body {
 .section-description {
   font-weight: 400;
   line-height: 1.5;
+  text-align: center;
   letter-spacing: 0.02em;
   color: var(--text);
 }
@@ -85,8 +91,10 @@ body {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
+  text-align: center;
   letter-spacing: 0.02em;
   color: var(--dark);
+  margin-bottom: 8px;
 }
 
 .second-title {
@@ -97,6 +105,7 @@ body {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: var(--dark);
+  margin-bottom: 72px;
 }
 
 .visually-hidden {
@@ -144,7 +153,7 @@ body {
   margin-left: auto;
 }
 
-.logo {
+.logo-header {
   margin-right: 76px;
 }
 
@@ -178,6 +187,8 @@ body {
 /* ======================== HERO ========================  */
 
 .hero {
+  padding-top: 142px;
+  padding-bottom: 188px;
   background-color: #2e2f42;
 }
 
@@ -222,6 +233,19 @@ body {
   background-color: #ffffff;
 }
 
+.aboutus {
+  display: flex;
+}
+
+.about-item {
+  flex-basis: calc((100%-72px) / 4);
+  flex-wrap: wrap;
+}
+
+.about-item:not(:nth-child(4n)) {
+  margin-right: 24px;
+}
+
 /* ======================== /ABOUT ========================  */
 
 /* ======================== OFFER ========================  */
@@ -230,12 +254,49 @@ body {
   background-color: #ffffff;
 }
 
+.weoffer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
 /* ======================== /OFFER ======================== */
 
 /* ======================== EMPLOYEES ======================== */
 
 .ourteam {
+  padding-bottom: 152px;
   background-color: #f4f4fd;
+}
+
+.employees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  /* третій спосіб через gap */
+  /* justify-content: space-between; */
+  /* перший спосіб не підходить бо можуть добавлятися співробітники і між фото буде простір, так як приєимається по боках */
+}
+
+/* .employees-item {
+  flex-basis: calc((100%-72px) / 4);
+} */
+/* можна по формулі задати ширину між фото співробітників і тоді не треба задавати ширину самого фото */
+
+/* другий спосіб, все працює */
+/* .employees-item:not(:nth-child(4n)) {
+  margin-right: 24px;
+}
+
+.employees-item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 48px;
+} */
+
+.employees-item-content-wrapper {
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
+  background-color: #ffffff;
 }
 
 /* ======================== /EMPLOYEES ======================== */
@@ -246,11 +307,19 @@ body {
   background-color: #2e2f42;
 }
 
+.footer-content-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 156px;
+  margin-right: auto;
+}
+
 .footer-description {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--accent);
+  margin-top: 16px;
 }
 
 /* ======================== /FOOTER ========================  */
